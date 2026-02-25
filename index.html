@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto glass-card rounded-[2.5rem] p-10 md:p-16">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-black text-gray-900 mb-3 tracking-tight">Create Your Profile</h2>
+        <p class="text-gray-500 font-medium">Setup your health profile to unlock personalized tracking.</p>
+    </div>
+
+    <form method="POST" action="{{ url_for('profile') }}" class="space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-2">
+                <label class="block text-sm font-black text-gray-800 uppercase tracking-widest ml-1">Full Name</label>
+                <input type="text" name="name" required placeholder="John Doe"
+                    class="w-full bg-gray-50/50 border-2 border-transparent rounded-3xl px-6 py-5 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-800 font-bold placeholder:text-gray-300">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-sm font-black text-gray-800 uppercase tracking-widest ml-1">Age</label>
+                <input type="number" name="age" required min="1" placeholder="25"
+                    class="w-full bg-gray-50/50 border-2 border-transparent rounded-3xl px-6 py-5 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-800 font-bold">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-2">
+                <label class="block text-sm font-black text-gray-800 uppercase tracking-widest ml-1">Gender</label>
+                <select name="gender" required
+                    class="w-full bg-gray-50/50 border-2 border-transparent rounded-3xl px-6 py-5 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-800 font-bold appearance-none cursor-pointer">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-sm font-black text-gray-800 uppercase tracking-widest ml-1">Activity Level</label>
+                <select name="activity" required
+                    class="w-full bg-gray-50/50 border-2 border-transparent rounded-3xl px-6 py-5 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-800 font-bold appearance-none cursor-pointer">
+                    <option value="">Select Level</option>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="light">Lightly Active</option>
+                    <option value="moderate">Moderately Active</option>
+                    <option value="active">Very Active</option>
+                    <option value="very_active">Extra Active</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-2">
+                <label class="block text-sm font-black text-gray-800 uppercase tracking-widest ml-1">Weight (kg)</label>
+                <input type="number" name="weight" step="0.1" required placeholder="75.5"
+                    class="w-full bg-gray-50/50 border-2 border-transparent rounded-3xl px-6 py-5 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-800 font-bold">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-sm font-black text-gray-800 uppercase tracking-widest ml-1">Height (cm)</label>
+                <input type="number" name="height" step="1" required placeholder="180"
+                    class="w-full bg-gray-50/50 border-2 border-transparent rounded-3xl px-6 py-5 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-800 font-bold">
+            </div>
+        </div>
+
+        <div class="space-y-2">
+            <label class="block text-sm font-black text-gray-800 uppercase tracking-widest ml-1">Diet Mode</label>
+            <select name="diet_mode" required
+                class="w-full bg-gray-50/50 border-2 border-transparent rounded-3xl px-6 py-5 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-800 font-bold appearance-none cursor-pointer">
+                <option value="">Select Diet Mode</option>
+                <option value="bulk">Bulk (+300 kcal)</option>
+                <option value="cut">Cut (-300 kcal)</option>
+                <option value="weight_gain">Weight Gain (+500 kcal)</option>
+                <option value="weight_loss">Weight Loss (-500 kcal)</option>
+            </select>
+        </div>
+
+        <div class="pt-4">
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-emerald-600 to-blue-600 text-white font-black py-6 rounded-3xl hover:shadow-2xl hover:shadow-emerald-500/30 active:scale-[0.98] transition-all text-xl">
+                Create My Profile
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

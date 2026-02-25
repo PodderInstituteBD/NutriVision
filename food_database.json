@@ -1,0 +1,94 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "name": "Rice (White, Cooked)",
+      "category": "Grain",
+      "calories_per_100g": 130,
+      "protein_g": 2.7,
+      "carbs_g": 28,
+      "fat_g": 0.3
+    },
+    {
+      "id": 2,
+      "name": "Chicken Breast (Cooked)",
+      "category": "Protein",
+      "calories_per_100g": 165,
+      "protein_g": 31,
+      "carbs_g": 0,
+      "fat_g": 3.6
+    },
+    {
+      "id": 3,
+      "name": "Egg (Boiled)",
+      "category": "Protein",
+      "calories_per_100g": 155,
+      "protein_g": 13,
+      "carbs_g": 1.1,
+      "fat_g": 11
+    },
+    {
+      "id": 4,
+      "name": "Banana",
+      "category": "Fruit",
+      "calories_per_100g": 89,
+      "protein_g": 1.1,
+      "carbs_g": 23,
+      "fat_g": 0.3
+    },
+    {
+      "id": 5,
+      "name": "Apple",
+      "category": "Fruit",
+      "calories_per_100g": 52,
+      "protein_g": 0.3,
+      "carbs_g": 14,
+      "fat_g": 0.2
+    },
+    {
+      "id": 6,
+      "name": "Milk (Full Cream)",
+      "category": "Dairy",
+      "calories_per_100g": 60,
+      "protein_g": 3.2,
+      "carbs_g": 5,
+      "fat_g": 3.3
+    },
+    {
+      "id": 7,
+      "name": "Lentils (Cooked)",
+      "category": "Legume",
+      "calories_per_100g": 116,
+      "protein_g": 9,
+      "carbs_g": 20,
+      "fat_g": 0.4
+    },
+    {
+      "id": 8,
+      "name": "Potato (Boiled)",
+      "category": "Vegetable",
+      "calories_per_100g": 87,
+      "protein_g": 1.9,
+      "carbs_g": 20,
+      "fat_g": 0.1
+    },
+    {
+      "id": 9,
+      "name": "Bread (White)",
+      "category": "Grain",
+      "calories_per_100g": 265,
+      "protein_g": 9,
+      "carbs_g": 49,
+      "fat_g": 3.2
+    },
+    {
+      "id": 10,
+      "name": "Almonds",
+      "category": "Nut",
+      "calories_per_100g": 579,
+      "protein_g": 21,
+      "carbs_g": 22,
+      "fat_g": 50
+    }
+  ]
+}

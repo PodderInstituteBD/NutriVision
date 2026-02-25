@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="max-w-md mx-auto bg-white shadow-lg rounded-lg p-8">
+
+    <h2 class="text-2xl font-bold text-green-600 mb-6 text-center">
+        Login to NutriTrack
+    </h2>
+
+    {% if error %}
+        <div class="bg-red-100 text-red-700 p-3 rounded mb-4 text-sm">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}" class="space-y-5">
+
+        <!-- Email -->
+        <div>
+            <label class="block font-medium mb-1">Email</label>
+            <input type="email" name="email" required
+                class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label class="block font-medium mb-1">Password</label>
+            <input type="password" name="password" required
+                class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <!-- Login Button -->
+        <div class="text-center">
+            <button type="submit"
+                class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+                Login
+            </button>
+        </div>
+
+    </form>
+
+    <div class="mt-6 text-center text-sm">
+        <p>
+            Don't have an account?
+            <a href="{{ url_for('register') }}" class="text-green-600 hover:underline">
+                Register
+            </a>
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

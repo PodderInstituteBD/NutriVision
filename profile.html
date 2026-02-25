@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
+
+    <h2 class="text-2xl font-bold text-green-600 mb-6 text-center">
+        Your Profile
+    </h2>
+
+    {% if session.get('name') %}
+
+    <!-- Basic Info -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+            <p class="font-medium text-gray-700">Name</p>
+            <p class="text-lg font-semibold">{{ session['name'] }}</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+            <p class="font-medium text-gray-700">Age</p>
+            <p class="text-lg font-semibold">{{ session['age'] }}</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+            <p class="font-medium text-gray-700">Gender</p>
+            <p class="text-lg font-semibold capitalize">{{ session['gender'] }}</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+            <p class="font-medium text-gray-700">Weight</p>
+            <p class="text-lg font-semibold">{{ session['weight'] }} kg</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+            <p class="font-medium text-gray-700">Height</p>
+            <p class="text-lg font-semibold">{{ session['height'] }} m</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded shadow-sm">
+            <p class="font-medium text-gray-700">Activity Level</p>
+            <p class="text-lg font-semibold capitalize">
+                {{ session['activity'].replace('_', ' ') }}
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Calculated Results -->
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="bg-green-100 p-6 rounded text-center shadow">
+            <p class="text-gray-700 font-medium">BMI</p>
+            <p class="text-2xl font-bold text-green-700">{{ session['bmi'] }}</p>
+        </div>
+
+        <div class="bg-blue-100 p-6 rounded text-center shadow">
+            <p class="text-gray-700 font-medium">BMR</p>
+            <p class="text-2xl font-bold text-blue-700">
+                {{ session['bmr'] | round(2) }} kcal/day
+            </p>
+        </div>
+
+        <div class="bg-yellow-100 p-6 rounded text-center shadow">
+            <p class="text-gray-700 font-medium">Daily Calorie Target</p>
+            <p class="text-2xl font-bold text-yellow-700">
+                {{ session['daily_cal'] }} kcal
+            </p>
+        </div>
+
+    </div>
+
+    <div class="mt-8 text-center">
+        <a href="{{ url_for('progress') }}"
+           class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+           Go to Dashboard
+        </a>
+    </div>
+
+    {% else %}
+        <div class="text-center text-red-600 font-medium">
+            No profile found. Please create one first.
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
